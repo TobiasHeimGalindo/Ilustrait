@@ -14,14 +14,9 @@
   <link href="assets/img/favicon.png" rel="icon" />
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet" />
-
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
@@ -44,41 +39,23 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="" />
-        <span>FlexStart</span>
+        <span>Ilustrait</span>
       </a>
-
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
           <li>
-            <a class="nav-link scrollto" href="#portfolio">Portfolio</a>
+            <a class="nav-link" href="/about">About Us</a>
           </li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
           <li class="dropdown">
-            <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <a><span>Shop</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown">
-                <a href="#"><span>Deep Drop Down</span>
-                  <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">Order Tracking</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get test</a></li>
+          <li><a class="getstarted scrollto" href="#start">Get started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -93,16 +70,18 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">
-            We offer modern solutions for growing your business
+            Unique and personalized clothing - powered by AI
           </h1>
           <h2 data-aos="fade-up" data-aos-delay="400">
-            We are team of talented designers making websites with Bootstrap
+            Get unique and personalized clothing with our AI image generator and print service - the perfect gift for
+            yourself or a loved one!
           </h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="#about"
+              <a href="#start"
                 class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Get Started</span>
+
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -110,8 +89,8 @@
         </div>
         <!--Hier weiter machen gruppe tim kai-->
         <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/img/dalle-crayon.png" class="img-fluid img-overlay-left" alt="tank" />
-          <img src="assets/img/dalle-monkey.png" class="img-fluid img-overlay-right" alt="monkey" />
+          <img src="assets/img/dalle-crayon.png" class="img-fluid img-overlay-left image-rounded" alt="tank" />
+          <img src="assets/img/dalle-monkey.png" class="img-fluid img-overlay-right image-rounded" alt="monkey" />
         </div>
       </div>
     </div>
@@ -120,10 +99,10 @@
 
   <main id="main">
     <!-- ======= Prompt Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up" style="background-color: hotpink">
+    <section id="start" class="values">
+      <div class="container" data-aos="fade-up">
         <div class="row">
-          <div class="col">
+          <div class="col prompt-header">
             <h1>Get Started</h1>
             </br>
             <p>Welcome to the tutorial. This prompt tutorial can help you come up with ideas for stories for the artwork
@@ -131,116 +110,95 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-8">
-            <!-- dropdown content goes here -->
-            <p>The image should be a <select id="dropdown1" class="form-control form-control-sm"
-                onchange="changeImage()">
-                <option value="Unicorn">Unicorn</option>
-                <option value="Dragon">Dragon</option>
-                <option value="Car">Car</option>
-              </select> in a <select id="dropdown2" class="form-control form-control-sm" onchange="changeImage()">
-                <option value="oil painting">oil painting</option>
-                <option value="watercolor">watercolor</option>
-                <option value="pen and ink">pen and ink</option>
-              </select> style and a <select id="dropdown3" class="form-control form-control-sm"
-                onchange="changeImage()">
-                <option value="tropical paradise">tropical paradise</option>
-                <option value="Serengeti">Serengeti</option>
-                <option value="frozen tundra">frozen tundra</option>
-              </select> background</p>
+          <div class="prompt-button-parent">
+            <button type="button" class="btn btn-primary" id="prompt-generator-button">Prompt Generator</button>
+            <p> OR </p>
+            <button type="button" class="btn btn-primary" id="create-your-own-button">Create
+              Your Own Prompt</button>
+          </div>
+        </div>
+        <div class="row prompt-parent">
+          <div class="col-md-8 prompt-block">
+            <!-- left block -->
+            <div class="prompt-generator">
+              <!--prompt generator-->
+              <p>The image should be a <select id="dropdown1" class="form-control form-control-md"
+                  onchange="changeImage()">
+                  <option value="Unicorn">Unicorn</option>
+                  <option value="Dragon">Dragon</option>
+                  <option selected="true" value="Giant Robot">Giant Robot</option>
+                </select> in the style of <select id="dropdown2" class="form-control form-control-md"
+                  onchange="changeImage()">
+                  <option selected="true" value="oil painting">an oil painting</option>
+                  <option value="watercolor">watercolor</option>
+                  <option value="pen and ink">pen and ink</option>
+                </select> and be set against a <select id="dropdown3" class="form-control form-control-md"
+                  onchange="changeImage()">
+                  <option value="tropical paradise">tropical paradise</option>
+                  <option selected="true" value="Serengeti">Serengeti</option>
+                  <option value="frozen tundra">frozen tundra</option>
+                </select> background.</p>
+            </div>
+            <div class="create-your-own ">
+              <!--create your own prompt textfield-->
+              <form>
+                <div class="form-group">
+                  <label for="custom-prompt-input">Custom Prompt</label>
+                  <textarea class="form-control" id="custom-prompt-textarea" rows="3" cols="50"></textarea>
+                  <small id="customPromptHelp" class="form-text text-muted">Enter your custom prompt here</small>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+              </form>
+            </div>
+          </div>
 
+          <script>const promptGeneratorButton = document.getElementById('prompt-generator-button');
+            const createYourOwnButton = document.getElementById('create-your-own-button');
+            const promptGeneratorDiv = document.querySelector('.prompt-generator');
+            const createYourOwnDiv = document.querySelector('.create-your-own');
 
+            // By default, show the prompt generator div and hide the create your own div
+            promptGeneratorDiv.style.display = 'block';
+            createYourOwnDiv.style.display = 'none';
 
-            <div class="col-md-4">
-              <!-- image content goes here -->
-              <h2>Image Preview</h2>
+            // Add event listeners to the buttons
+            promptGeneratorButton.addEventListener('click', () => {
+              promptGeneratorDiv.style.display = 'block';
+              createYourOwnDiv.style.display = 'none';
+            });
 
+            createYourOwnButton.addEventListener('click', () => {
+              promptGeneratorDiv.style.display = 'none';
+              createYourOwnDiv.style.display = 'block';
+            });
+            // logs the value that the user has written, later send the value through the api here
+            document.querySelector('form').addEventListener('submit', (event) => {
+              event.preventDefault();
+              console.log(document.getElementById('custom-prompt-input').value);
+            });
+
+          </script>
+
+          <div class="col-md-4">
+            <!-- image content goes here -->
+            <h2 style="font-weight: 600;
+            font-size: 25px;
+            line-height: 30px;">Image Preview</h2>
+            <div>
+              <img id="selectedImage" src="assets/img/generator/image20.jpeg" class="img-fluid image-rounded">
+            </div>
+            <div>
+              <h2 style="font-weight: 600;
+              font-size: 25px;
+              line-height: 30px;">Prompt Preview</h2>
               <div>
-                <img id="selectedImage" src="assets/img/generator/image21.jpeg" class="img-fluid">
+
               </div>
-
-              <script>
-                function changeImage(imageName) {
-                  document.getElementById('selectedImage').src = imageName;
-                  console.log("test", imageName, document.getElementById('selectedImage').src)
-                }
-              </script>
-
-
-              <script>
-                function changeImage() {
-                  var dropdown1 = document.getElementById("dropdown1");
-                  var dropdown2 = document.getElementById("dropdown2");
-                  var dropdown3 = document.getElementById("dropdown3");
-                  var selectedOption1 = dropdown1.options[dropdown1.selectedIndex].value;
-                  var selectedOption2 = dropdown2.options[dropdown2.selectedIndex].value;
-                  var selectedOption3 = dropdown3.options[dropdown3.selectedIndex].value;
-                  var image = document.getElementById("selectedImage");
-
-                  if (selectedOption1 === "Unicorn" && selectedOption2 === "oil painting" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image1.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "oil painting" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image2.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "oil painting" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image3.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "watercolor" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image4.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "watercolor" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image5.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "watercolor" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image6.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image7.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image8.jpeg";
-                  } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image9.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "oil painting" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image10.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "oil painting" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image11.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "oil painting" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image12.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "watercolor" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image13.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "watercolor" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image14.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "watercolor" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image15.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "pen and ink" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image16.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "pen and ink" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image17.jpeg";
-                  } else if (selectedOption1 === "Dragon" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image18.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "oil painting" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image19.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "oil painting" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image20.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "oil painting" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image21.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "watercolor" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image22.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "watercolor" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image23.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "watercolor" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image24.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "pen and ink" && selectedOption3 === "tropical paradise") {
-                    image.src = "assets/img/generator/image25.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "pen and ink" && selectedOption3 === "Serengeti") {
-                    image.src = "assets/img/generator/image26.jpeg";
-                  } else if (selectedOption1 === "Giant Robot" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
-                    image.src = "assets/img/generator/image27.jpeg";
-                  } else {
-                    image.src = "assets/img/generator/image21.jpeg";
-                  }
-                }
-              </script>
-
-
+              <!--prompt preview-->
             </div>
           </div>
         </div>
+      </div>
     </section>
     <!-- End Prompt Section -->
 
@@ -248,8 +206,8 @@
     <section id="values" class="values">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
-          <h2>Our Values</h2>
-          <p>Odit est perspiciatis laborum et dicta</p>
+          <!-- <h2>Our Values</h2>
+          <p>Odit est perspiciatis laborum et dicta</p> -->
         </header>
 
         <div class="row">
@@ -1203,7 +1161,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpeg" class="img-fluid" alt="" />
+                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -1226,7 +1184,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpeg" class="img-fluid" alt="" />
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -1249,7 +1207,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpeg" class="img-fluid" alt="" />
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -1272,7 +1230,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/team-4.jpeg" class="img-fluid" alt="" />
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -1605,6 +1563,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/imageshowcase.js"></script>
 </body>
 
 </html>
