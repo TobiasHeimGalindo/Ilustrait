@@ -1,4 +1,5 @@
 function get_images_for_gallery() {
+    //später die backend liste anbinden
     url = "https://dog.ceo/api/breeds/image/random"
     const amount = 15
     const container = document.getElementById("gallery_container")
@@ -13,8 +14,8 @@ function get_images_for_gallery() {
                 {
                     const element = create_gallery_element(data["message"], data["status"])
                     container.appendChild(element)
+                    console.log("element", element)
                 })
-            .then(console.log(img_url_list))
     }     
 }
 

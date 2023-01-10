@@ -26,12 +26,12 @@ const dropdown2 = document.getElementById('dropdown2');
 const dropdown3 = document.getElementById('dropdown3');
 const customPromptTextarea = document.getElementById('custom-prompt-textarea');
 const submitButton = document.getElementById('submit-button');
+var image = document.getElementById("selectedImage");
 
 dropdown1.addEventListener('change', updateDisplayDiv);
 dropdown2.addEventListener('change', updateDisplayDiv);
 dropdown3.addEventListener('change', updateDisplayDiv);
-
-submitButton.addEventListener('click', updateDisplayDiv);
+submitButton.addEventListener('click', buttonClicked, updateDisplayDiv);
 
 function updateDisplayDiv() {
     if (promptGeneratorDiv.style.display === 'block') {
@@ -45,12 +45,28 @@ function updateDisplayDiv() {
     } else {
         const customPromptValue = customPromptTextarea.value;
         displayDiv.innerHTML = customPromptValue;
-
     }
 
     // Reset copy button if value changes
     copyButton.style.backgroundColor = ''
 }
+
+
+
+
+function buttonClicked() {
+
+
+    const customPromptValue = customPromptTextarea.value;
+    console.log("button clicked", customPromptValue)
+
+    if (customPromptValue.trim !== "") {
+        sendPrompt(customPromptValue);
+        console.log("sendPrompt aufgerufen!", customPromptValue);
+    }
+}
+
+
 
 const copyButton = document.getElementById('copy-button');
 copyButton.addEventListener('click', () => {
@@ -69,11 +85,37 @@ copyButton.addEventListener('click', () => {
 });
 
 // logs the value that the user has written, later send the value through the api here
-document.querySelector('form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log(document.getElementById('custom-prompt-input').value);
+
+document.querySelector('form').addEventListener('submit', (textvalue) => {
+    textvalue.preventDefault();
+
+
+
 });
-//set the default prompts into the prompt preview
-window.onload = function () {
-    updateDisplayDiv();
-}
+
+async function sendPrompt(promptText) {
+    console.log("sendGrid wurde aufgerufen!", promptText)
+    const data = {
+        "prompt": promptText
+    };
+
+    await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            let imageUrl = data.imageUrl
+            image.src = data['imageurl']
+
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+
+
+};
+window.addEventListener('load', updateDisplayDiv)

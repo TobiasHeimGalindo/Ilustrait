@@ -277,11 +277,14 @@ section {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  margin: 25px 50px 25px 50px;
-  padding: 5px 0 5px 0;
-  position: fixed;
-  background-color: #FFFFF5;
-  box-shadow: -2px -2px 2px #ccc, 2px 2px 2px #ccc, 2px -2px 2px #ccc, -2px 2px 2px #ccc;
+  padding: 20px 0;
+  background-color: white;
+}
+
+.header.header-scrolled {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
 .header .logo {
@@ -302,15 +305,6 @@ section {
   margin-top: 3px;
 }
 
-#header-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background-color: #333;
-  box-shadow: 2px 4px 2px -2px rgba(0, 0, 0, 0.2);
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -588,7 +582,7 @@ section {
 }
 
 .hero .btn-get-started span {
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -616,8 +610,7 @@ section {
 
 .hero-img img.bottom {
   z-index: 1;
-  clip: rect(0, auto, auto, 0);
-  /* This will hide the right half of the image */
+  clip: rect(0, auto, auto, 0); /* This will hide the right half of the image */
 }
 
 @media (min-width: 1024px) {
@@ -715,6 +708,7 @@ section {
   height: 120%;
   z-index: 0;
 }
+
 
 /*--------------------------------------------------------------
 # Index Page
