@@ -19,9 +19,9 @@ function changeImage() {
         image.src = "assets/img/generator/image5.jpeg";
     } else if (selectedOption1 === "Unicorn" && selectedOption2 === "watercolor" && selectedOption3 === "frozen tundra") {
         image.src = "assets/img/generator/image6.jpeg";
-    } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
+    } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "tropical paradise") {
         image.src = "assets/img/generator/image7.jpeg";
-    } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
+    } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "Serengeti") {
         image.src = "assets/img/generator/image8.jpeg";
     } else if (selectedOption1 === "Unicorn" && selectedOption2 === "pen and ink" && selectedOption3 === "frozen tundra") {
         image.src = "assets/img/generator/image9.jpeg";
