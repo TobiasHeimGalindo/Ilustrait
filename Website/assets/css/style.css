@@ -16,6 +16,7 @@ body {
   font-family: "Inter", sans-serif;
   color: #444444;
 }
+
 /* ILUSTRAIT themes 
 
 DEFAULT: #565273
@@ -41,6 +42,97 @@ h5,
 h6 {
   font-family: "Inter", sans-serif;
 }
+
+
+/*--------------------------------------------------------------
+# custom css classes
+
+to be reponsive for other sizes:
+.prompt-block select {
+    min-width:81px
+}
+--------------------------------------------------------------*/
+
+.prompt-header p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  color: #646F79;
+}
+
+.prompt-parent {
+  padding-top: 25px;
+}
+
+.prompt-button-parent {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.prompt-button-parent button {
+  display: inline-block;
+  width: 310px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.prompt-button-parent p {
+  display: inline-block;
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+
+.prompt-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-block select {
+  display: inline-block;
+  width: auto;
+  min-width: 230px
+}
+
+.prompt-block p {
+  font-size: 25px;
+  font-weight: 600
+}
+
+.image-rounded {
+  border-radius: 20px;
+}
+
+.prompt-preview-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+.copy-container {
+  padding: 10px;
+}
+
+#display-div {
+  width: 300px;
+  height: auto;
+  overflow-wrap: break-word;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
 
 /*--------------------------------------------------------------
 # Sections
@@ -202,7 +294,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #2e2c3e;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 3px;
 }
 
@@ -234,7 +326,7 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #565273;
@@ -268,7 +360,8 @@ section {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #F9B756; /*hover color*/
+  background: #F9B756;
+  /*hover color*/
 }
 
 .navbar .dropdown ul {
@@ -481,7 +574,7 @@ section {
 }
 
 .hero .btn-get-started span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -520,7 +613,8 @@ section {
 
 .hero-img img.bottom {
   z-index: 1;
-  clip: rect(0, auto, auto, 0); /* This will hide the right half of the image */
+  clip: rect(0, auto, auto, 0);
+  /* This will hide the right half of the image */
 }
 
 @media (min-width: 1024px) {
@@ -603,7 +697,7 @@ section {
 }
 
 .about .btn-read-more span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -684,7 +778,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
 }
 
@@ -997,7 +1091,7 @@ section {
   font-size: 36px;
   color: #444444;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .pricing .price sup {
@@ -1043,7 +1137,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   transition: 0.3s;
   border: 1px solid #565273;
@@ -2346,7 +2440,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #2e2c3e;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 3px;
 }
 
@@ -2354,7 +2448,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .footer .footer-top .social-links a {
