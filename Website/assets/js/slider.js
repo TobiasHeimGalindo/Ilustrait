@@ -37,7 +37,7 @@ function create_gallery_element(imageUrl, prompt) {
     // Create the image element
     const img = document.createElement('img');
     img.src = imageUrl;
-    img.classList.add('testimonial-img');
+    img.classList.add('testimonial-img', 'img-fullscreen');
     img.alt = '';
     profileDiv.appendChild(img);
 

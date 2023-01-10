@@ -24,7 +24,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
-  <script src="test.js"></script>
 
   <!-- =======================================================
   * Template Name: FlexStart - v1.12.0
@@ -91,8 +90,12 @@
         <!--Hier weiter machen gruppe tim kai-->
         <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
           <img src="assets/img/dalle-crayon.png" class="img-fluid img-overlay-left image-rounded" alt="tank" />
+          <div class="img-overlay-left textbox-left"><span>A crayon drawing of a tank</span></div>
           <img src="assets/img/dalle-monkey.png" class="img-fluid img-overlay-right image-rounded" alt="monkey" />
+          <div class="img-overlay-right textbox-right"><span>A photo of two chimpanses playing darts</span></div>
         </div>
+      </div>
+
       </div>
     </div>
   </section>
@@ -100,31 +103,30 @@
 
   <main id="main">
 
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <h2>In need for Inspiration?</h2>
+          <p>Check out the Art that other users have created:</p>
+        </header>
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+          <div class="swiper-wrapper" id="gallery_container">
 
- <!-- ======= Testimonials Section ======= -->
- <section id="testimonials" class="testimonials">
-  <div class="container" data-aos="fade-up">
-    <header class="section-header">
-      <h2>In need for Inspiration?</h2>
-      <p>Check out the Art that other users have created:</p>
-    </header>
-    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
-      <div class="swiper-wrapper" id="gallery_container">
-
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
-<!-- End Testimonials Section -->
-
-<script>
-  window.onload = function(){
-    get_images_for_gallery()
-  }
-</script>
-
-
+      <div class="container">
+        <div class="row">
+          <div class="card-deck swiper-container">
+            <div class="row">
+              <div class="swiper-wrapper" id="gallery_container"></div>
+            </div>
+          </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
 
 
 
@@ -202,233 +204,147 @@
               </div>
             </div>
           </div>
-          <script>
-            const promptGeneratorButton = document.getElementById('prompt-generator-button');
-            const createYourOwnButton = document.getElementById('create-your-own-button');
-            const promptGeneratorDiv = document.querySelector('.prompt-generator');
-            const createYourOwnDiv = document.querySelector('.create-your-own');
-
-            // By default, show the prompt generator div and hide the create your own div
-            promptGeneratorDiv.style.display = 'block';
-            createYourOwnDiv.style.display = 'none';
-
-
-            promptGeneratorButton.addEventListener('click', () => {
-              promptGeneratorDiv.style.display = 'block';
-              createYourOwnDiv.style.display = 'none';
-              updateDisplayDiv();
-            });
-
-            createYourOwnButton.addEventListener('click', () => {
-              promptGeneratorDiv.style.display = 'none';
-              createYourOwnDiv.style.display = 'block';
-              updateDisplayDiv();
-            });
-
-            const displayDiv = document.getElementById('display-div');
-
-            const dropdown1 = document.getElementById('dropdown1');
-            const dropdown2 = document.getElementById('dropdown2');
-            const dropdown3 = document.getElementById('dropdown3');
-            const customPromptTextarea = document.getElementById('custom-prompt-textarea');
-            const submitButton = document.getElementById('submit-button');
-
-
-            dropdown1.addEventListener('change', updateDisplayDiv);
-            dropdown2.addEventListener('change', updateDisplayDiv);
-            dropdown3.addEventListener('change', updateDisplayDiv);
-
-
-            submitButton.addEventListener('click', updateDisplayDiv);
-
-
-            function updateDisplayDiv() {
-              if (promptGeneratorDiv.style.display === 'block') {
-
-                const dropdown1Value = dropdown1.value;
-                const dropdown2Value = dropdown2.value;
-                const dropdown3Value = dropdown3.value;
-
-                displayDiv.innerHTML = `The image should be a <strong>${dropdown1Value}</strong> in the style of <strong>${dropdown2Value}</strong> and be set against a <strong>${dropdown3Value}</strong> background.`;
-
-              } else {
-                const customPromptValue = customPromptTextarea.value;
-                displayDiv.innerHTML = customPromptValue;
-
-              }
-
-              // Reset copy button if value changes
-              copyButton.style.backgroundColor = ''
-            }
-
-            const copyButton = document.getElementById('copy-button');
-            copyButton.addEventListener('click', () => {
-              const range = document.createRange();
-              range.selectNode(displayDiv);
-              window.getSelection().addRange(range);
-
-              const success = document.execCommand('copy');
-
-              // Clear the selection
-              window.getSelection().removeAllRanges();
-
-              if (success) {
-                copyButton.style.backgroundColor = 'green';
-              }
-            });
-
-            // logs the value that the user has written, later send the value through the api here
-            document.querySelector('form').addEventListener('submit', (event) => {
-              event.preventDefault();
-              console.log(document.getElementById('custom-prompt-input').value);
-            });
-            //set the default prompts into the prompt preview
-            window.onload = function () {
-              updateDisplayDiv();
-            }
-
-          </script>
         </div>
       </div>
     </section>
     <!-- End Prompt Section -->
 
-<!-- ======= F.A.Q Section ======= -->
-<section id="faq" class="faq">
-  <div class="container" data-aos="fade-up">
-  <header class="section-header">
-    <h2>F.A.Q</h2>
-    <p>Frequently Asked Questions</p>
-  </header>
-  
-  <div class="row">
-    <div class="col-lg-6">
-      <!-- F.A.Q List 1-->
-      <div class="accordion accordion-flush" id="faqlist1">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq-content-1">
-              Non consectetur a erat nam at lectus urna duis?
-            </button>
-          </h2>
-          <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-            <div class="accordion-body">
-              Hallo wie geht es dir?
-  
-              non.
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
+          <h2>F.A.Q</h2>
+          <p>Frequently Asked Questions</p>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- F.A.Q List 1-->
+            <div class="accordion accordion-flush" id="faqlist1">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-1">
+                    Non consectetur a erat nam at lectus urna duis?
+                  </button>
+                </h2>
+                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Hallo wie geht es dir?
+
+                    non.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-2">
+                    Feugiat scelerisque varius morbi enim nunc faucibus a
+                    pellentesque?
+                  </button>
+                </h2>
+                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Dolor sit amet consectetur adipiscing elit pellentesque
+                    habitant morbi. Id interdum velit laoreet id donec
+                    ultrices. Fringilla phasellus faucibus scelerisque
+                    eleifend donec pretium. Est pellentesque elit ullamcorper
+                    dignissim. Mauris ultrices eros in cursus turpis massa
+                    tincidunt dui.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
+                    Dolor sit amet consectetur adipiscing elit pellentesque
+                    habitant morbi?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices
+                    sagittis orci. Faucibus pulvinar elementum integer enim.
+                    Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                    tellus pellentesque eu tincidunt. Lectus urna duis
+                    convallis convallis tellus. Urna molestie at elementum eu
+                    facilisis sed odio morbi quis
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-  
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq-content-2">
-              Feugiat scelerisque varius morbi enim nunc faucibus a
-              pellentesque?
-            </button>
-          </h2>
-          <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-            <div class="accordion-body">
-              Dolor sit amet consectetur adipiscing elit pellentesque
-              habitant morbi. Id interdum velit laoreet id donec
-              ultrices. Fringilla phasellus faucibus scelerisque
-              eleifend donec pretium. Est pellentesque elit ullamcorper
-              dignissim. Mauris ultrices eros in cursus turpis massa
-              tincidunt dui.
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq-content-3">
-              Dolor sit amet consectetur adipiscing elit pellentesque
-              habitant morbi?
-            </button>
-          </h2>
-          <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
-            <div class="accordion-body">
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices
-              sagittis orci. Faucibus pulvinar elementum integer enim.
-              Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
-              tellus pellentesque eu tincidunt. Lectus urna duis
-              convallis convallis tellus. Urna molestie at elementum eu
-              facilisis sed odio morbi quis
+
+          <div class="col-lg-6">
+            <!-- F.A.Q List 2-->
+            <div class="accordion accordion-flush" id="faqlist2">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-1">
+                    Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                  </button>
+                </h2>
+                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Dolor sit amet consectetur adipiscing elit pellentesque
+                    habitant morbi. Id interdum velit laoreet id donec
+                    ultrices. Fringilla phasellus faucibus scelerisque
+                    eleifend donec pretium. Est pellentesque elit ullamcorper
+                    dignissim. Mauris ultrices eros in cursus turpis massa
+                    tincidunt dui.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-2">
+                    Tempus quam pellentesque nec nam aliquam sem et tortor
+                    consequat?
+                  </button>
+                </h2>
+                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Molestie a iaculis at erat pellentesque adipiscing
+                    commodo. Dignissim suspendisse in est ante in. Nunc vel
+                    risus commodo viverra maecenas accumsan. Sit amet nisl
+                    suscipit adipiscing bibendum est. Purus gravida quis
+                    blandit turpis cursus in
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-3">
+                    Varius vel pharetra vel turpis nunc eget lorem dolor?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Laoreet sit amet cursus sit amet dictum sit amet justo.
+                    Mauris vitae ultricies leo integer malesuada nunc vel.
+                    Tincidunt eget nullam non nisi est sit amet. Turpis nunc
+                    eget lorem dolor sed. Ut venenatis tellus in metus
+                    vulputate eu scelerisque. Pellentesque diam volutpat
+                    commodo sed egestas egestas fringilla phasellus faucibus.
+                    Nibh tellus molestie nunc non blandit massa enim nec.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  
-    <div class="col-lg-6">
-      <!-- F.A.Q List 2-->
-      <div class="accordion accordion-flush" id="faqlist2">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq2-content-1">
-              Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
-            </button>
-          </h2>
-          <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-            <div class="accordion-body">
-              Dolor sit amet consectetur adipiscing elit pellentesque
-              habitant morbi. Id interdum velit laoreet id donec
-              ultrices. Fringilla phasellus faucibus scelerisque
-              eleifend donec pretium. Est pellentesque elit ullamcorper
-              dignissim. Mauris ultrices eros in cursus turpis massa
-              tincidunt dui.
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq2-content-2">
-              Tempus quam pellentesque nec nam aliquam sem et tortor
-              consequat?
-            </button>
-          </h2>
-          <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-            <div class="accordion-body">
-              Molestie a iaculis at erat pellentesque adipiscing
-              commodo. Dignissim suspendisse in est ante in. Nunc vel
-              risus commodo viverra maecenas accumsan. Sit amet nisl
-              suscipit adipiscing bibendum est. Purus gravida quis
-              blandit turpis cursus in
-            </div>
-          </div>
-        </div>
-  
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#faq2-content-3">
-              Varius vel pharetra vel turpis nunc eget lorem dolor?
-            </button>
-          </h2>
-          <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
-            <div class="accordion-body">
-              Laoreet sit amet cursus sit amet dictum sit amet justo.
-              Mauris vitae ultricies leo integer malesuada nunc vel.
-              Tincidunt eget nullam non nisi est sit amet. Turpis nunc
-              eget lorem dolor sed. Ut venenatis tellus in metus
-              vulputate eu scelerisque. Pellentesque diam volutpat
-              commodo sed egestas egestas fringilla phasellus faucibus.
-              Nibh tellus molestie nunc non blandit massa enim nec.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </section>
-  <!-- End F.A.Q Section -->
+    </section>
+    <!-- End F.A.Q Section -->
 
 
 
@@ -439,7 +355,7 @@
           <h2>Our Values</h2>
           <p>Odit est perspiciatis laborum et dicta</p>
         </header>
-        
+
         <div class="row">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
@@ -1559,9 +1475,12 @@
               iaculis eu non diam phasellus.
             </p>
             <div class="social-links mt-3">
-              <a href="https://www.tiktok.com/@ilustrait" target="_blank" class="TikTok"><i class="bi bi-tiktok"></i></a>
-              <a href="https://instagram.com/ilustrait_?igshid=YmMyMTA2M2Y=" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/ilustrait/about/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.tiktok.com/@ilustrait" target="_blank" class="TikTok"><i
+                  class="bi bi-tiktok"></i></a>
+              <a href="https://instagram.com/ilustrait_?igshid=YmMyMTA2M2Y=" target="_blank" class="instagram"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/ilustrait/about/" target="_blank" class="linkedin"><i
+                  class="bi bi-linkedin"></i></a>
             </div>
           </div>
 
@@ -1657,6 +1576,14 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/imageshowcase.js"></script>
+  <script src="assets/js/promptgenerator.js"></script>
+  <script src="assets/js/slider.js"></script>
+  <script>
+    window.onload = function () {
+      get_images_for_gallery()
+    }
+  </script>
+
 </body>
 
 </html>
