@@ -37,45 +37,32 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span>FlexStart</span>
+        <img src="assets/img/logo.png" alt="" />
+        <span>Ilustrait</span>
       </a>
-
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li>
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+          <li class="dropdown">
+            <a><span>Shop</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">Order Tracking</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="getstarted scrollto" href="#start">Get started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
+      <!-- .navbar -->
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <main id="main">
 
@@ -85,7 +72,7 @@
 
         <ol>
           <li>Product selection</a></li>
-          <li>Prompt should be written here</li>
+          <li id="prompt-head">Image Generation Prompt</li>
         </ol>
 
       </div>
@@ -105,11 +92,11 @@
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+                  <img src="assets/img/product/tshirt.png" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                  <img src="assets/img/product/hoodie.png" alt="">
                 </div>
 
               </div>
@@ -120,15 +107,17 @@
           <div class="col-lg-5 d-flex flex-column">
             <h3 id="product-name">Product Name</h3>
             <h4 id="product-price">Price</h4>
-            
+
             <div class="d-flex">
               <h6>Select Type</h6>
             </div>
             <div class="d-flex">
-              <button id="tshirt-button" class="btn btn-sm type-button btn-outline-primary btn-padding" data-type="T-Shirt" onclick="selectType(this)">
+              <button id="tshirt-button" class="btn btn-sm type-button btn-outline-primary btn-padding"
+                data-type="T-Shirt" onclick="selectType(this)">
                 <img src="assets/img/product/tshirt.png" alt="tshirt">
               </button>
-              <button id="hoodie-button" class="btn btn-sm type-button btn-outline-primary btn-padding" data-type="Hoodie" onclick="selectType(this)">
+              <button id="hoodie-button" class="btn btn-sm type-button btn-outline-primary btn-padding"
+                data-type="Hoodie" onclick="selectType(this)">
                 <img src="assets/img/product/hoodie.png" alt="hoodie">
               </button>
             </div>
@@ -136,13 +125,15 @@
               <h6>Select Size</h6>
             </div>
             <div class="d-flex">
-              <button id="small-button" class="btn size-button btn-outline-primary btn-padding" onclick="selectSize(this)">Small</button>
+              <button id="small-button" class="btn size-button btn-outline-primary btn-padding"
+                onclick="selectSize(this)">Small</button>
               <button id="medium-button" class="btn size-button btn-outline-primary btn-padding"
                 onclick="selectSize(this)">Medium</button>
-              <button id="large-button" class="btn size-button btn-outline-primary btn-padding" onclick="selectSize(this)">Large</button>
+              <button id="large-button" class="btn size-button btn-outline-primary btn-padding"
+                onclick="selectSize(this)">Large</button>
             </div>
-            <div class="d-flex">
-              <button class="btn btn-primary btn-padding btn-lg">Buy now</button>
+            <div class="d-flex mt-5">
+              <button class="btn btn-primary btn-lg">Buy now</button>
             </div>
           </div>
         </div>
@@ -185,10 +176,19 @@
 
   <script src="assets/js/productselector.js"></script>
   <script>
-    window.onload = function() {
+    window.onload = function () {
       document.getElementById("medium-button").click();
       document.getElementById("tshirt-button").click();
     }</script>
+  <script>
+    var data = {
+      prompt: "The image should be a Giant Robot in the style of oil painting and be set against a Serengeti background.",
+      imageurl: "https://replicate.delivery/pbxt/STMXiM6ZG9aDC5X2tdoqWuent4nveBWOspUACBREmeZ9jymgA/out-0.png"
+    };
+    var slide1 = document.querySelector(".swiper-slide:first-child img");
+    slide1.src = data.imageurl;
+    document.querySelector("#prompt-head").innerHTML = data.prompt;
+  </script>
 
 
 </body>
