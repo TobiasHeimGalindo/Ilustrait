@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/product/tshirt.png" alt="">
+                  <img src="assets/img/product/tshirt.png" alt="" id="tshirt-mockup-image">
                 </div>
 
                 <div class="swiper-slide">
@@ -181,6 +181,7 @@
       document.querySelector("#prompt-text").innerHTML = promptText;
       var slide1 = document.querySelector(".swiper-slide:first-child img");
       slide1.src = imageUrl;
+      generateTshirtMockup(imageUrl);
     }</script>
 </body>
 
