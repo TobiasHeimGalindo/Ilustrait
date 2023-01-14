@@ -1,7 +1,6 @@
 let imageUrl = localStorage.getItem('imageUrl');
 let promptText = localStorage.getItem('promptText');
 
-
 function selectType(element) {
     let types = document.querySelectorAll('.type-button');
     types.forEach(type => type.classList.remove('active'));
@@ -24,17 +23,32 @@ function changeSelection() {
 
     var prices = {
         "T-Shirt": {
-            "Small": 10,
-            "Medium": 15,
-            "Large": 20
+            "Small": {price: 39.99, variationId: "ts-s"},
+            "Medium": {price: 39.99, variationId: "ts-m"},
+            "Large": {price: 39.99, variationId: "ts-l"}
         },
         "Hoodie": {
-            "Small": 30,
-            "Medium": 35,
-            "Large": 40
+            "Small": {price: 69.99, variationId: "h-s"},
+            "Medium": {price: 69.99, variationId: "h-m"},
+            "Large": {price: 69.99, variationId: "h-l"}
         }
     }
 
     productName.innerHTML = selectedType + " - " + selectedSize;
-    productPrice.innerHTML = "$" + prices[selectedType][selectedSize];
+    productPrice.innerHTML = "$" + prices[selectedType][selectedSize].price;
+
+    let product = {
+        "type": selectedType,
+        "size": selectedSize,
+        "price": prices[selectedType][selectedSize].price,
+        "variationId": prices[selectedType][selectedSize].variationId,
+        "imageUrl": imageUrl,
+        "promptText": promptText
+    }
+
+    localStorage.setItem('product', JSON.stringify(product));
 }
+
+function redirectToShippingDetails() {
+    window.location.href = "shipping-details.html";
+};
