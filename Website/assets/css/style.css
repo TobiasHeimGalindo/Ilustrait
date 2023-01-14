@@ -34,6 +34,10 @@ a:hover {
   text-decoration: none;
 }
 
+.text-primary {
+  color: #565273 !important
+}
+
 h1,
 h2,
 h3,
@@ -146,6 +150,79 @@ button.type-button img {
 .btn-padding {
   margin: 8px;
 }
+
+/*shipping details*/
+.product-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-summary-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-summary-header h5 {
+  margin: 0;
+}
+
+.product-summary-body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.product-image {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.product-info {
+  width: 70%;
+  text-align: left;
+}
+
+.product-quantity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.count-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+.product-info .product-type,
+.product-info .product-size,
+.product-info .product-price {
+  margin-bottom: 5px;
+}
+
+.vat {
+  font-size: smaller;
+  color: grey;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Sections
@@ -617,7 +694,8 @@ section {
 
 .hero-img img.bottom {
   z-index: 1;
-  clip: rect(0, auto, auto, 0); /* This will hide the right half of the image */
+  clip: rect(0, auto, auto, 0);
+  /* This will hide the right half of the image */
 }
 
 @media (min-width: 1024px) {
@@ -646,7 +724,7 @@ section {
   .hero {
     text-align: center;
   }
-  
+
   .hero h1 {
     font-size: 32px;
   }
@@ -685,13 +763,13 @@ section {
 }
 
 .textbox-left {
- position: absolute;
- background-color: #FFF;
- margin: 0 30% 0 10%;
- padding: 5px 15px 5px 15px;
- bottom: 5%;
- border-radius: 8px;
- box-shadow: 2px 2px 4px 1px;
+  position: absolute;
+  background-color: #FFF;
+  margin: 0 30% 0 10%;
+  padding: 5px 15px 5px 15px;
+  bottom: 5%;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px 1px;
 }
 
 .textbox-right {
