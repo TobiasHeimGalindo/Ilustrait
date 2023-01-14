@@ -1,4 +1,5 @@
 let product = JSON.parse(localStorage.getItem("product"));
+let promo = 0.0;
 
 // display values with product.* here
 document.getElementById("product-name").innerHTML =
@@ -30,12 +31,22 @@ document.getElementById("decrement-btn").addEventListener("click", function () {
 
 document.getElementById("redeem").addEventListener("click", function (event) {
   event.preventDefault(); // prevent form from submitting
-  let promoCodeName = document.querySelector(
-    "input[placeholder='Promo code']"
-  ).value;
-  document.getElementById("promo-code-list").classList.remove("d-none");
-  document.getElementById("promo-code-name").innerHTML = promoCodeName;
-  document.getElementById("promo-code-value").innerHTML = "- 15 %";
+  let promoCode = document.getElementById("promo-input").value;
+  let validCodes = ["code1", "code2", "code3"];
+  if(validCodes.indexOf(promoCode) !== -1){
+      promo = 0.15;  //15% discount
+
+      document.getElementById("promo-code-name").innerHTML = promoCode;
+      document.getElementById("promo-code-value").innerHTML = "- 15 %";
+      document.getElementById("promo-code-list").classList.remove("d-none");
+
+      updateCart()
+  } else {
+    promo = 0
+    updateCart()
+    document.getElementById("promo-code-list").classList.add("d-none");
+
+  }
 });
 
 function updateCart() {
@@ -45,11 +56,9 @@ function updateCart() {
   );
   let price = parseFloat(document.getElementById("product-price").innerHTML);
 
-  let promo = 0.0;
-
   // Calculate the total price
   let totalPrice = quantity * price * (1 - promo);
-  let vat = totalPrice / 1.19;
+  let vat = totalPrice - (totalPrice / 1.19)
 
   // Update the total price and VAT amount on the page
   document.getElementById("total-price").innerHTML =
