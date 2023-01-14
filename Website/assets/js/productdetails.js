@@ -25,14 +25,14 @@ function changeSelection() {
 
     var prices = {
         "T-Shirt": {
-            "Small": { price: 39.99, variationId: "ts-s" },
-            "Medium": { price: 39.99, variationId: "ts-m" },
-            "Large": { price: 39.99, variationId: "ts-l" }
+            "Small": { price: 39.99, variationId: "4011" },
+            "Medium": { price: 39.99, variationId: "4011" },
+            "Large": { price: 39.99, variationId: "4011" }
         },
-        "Hoodie": {
-            "Small": { price: 69.99, variationId: "h-s" },
-            "Medium": { price: 69.99, variationId: "h-m" },
-            "Large": { price: 69.99, variationId: "h-l" }
+        "Sweatshirt": {
+            "Small": { price: 69.99, variationId: "13261" },
+            "Medium": { price: 69.99, variationId: "13261" },
+            "Large": { price: 69.99, variationId: "13261" }
         }
     }
 

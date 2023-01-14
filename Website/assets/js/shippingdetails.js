@@ -4,7 +4,7 @@ let promo = 0.0;
 // display values with product.* here
 document.getElementById("product-name").innerHTML =
   product.type + " " + product.size;
-document.getElementById("product-image").src = product.imageUrl;
+document.getElementById("product-image").src = product.mockupImageUrl;
 document.getElementById("product-price").innerHTML = product.price + " €";
 document.getElementById("product-cart").innerHTML = product.price + " €";
 document.getElementById("product-quantity").innerHTML = "1";
