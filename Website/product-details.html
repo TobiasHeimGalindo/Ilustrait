@@ -72,7 +72,7 @@
 
         <ol>
           <li>Product selection</a></li>
-          <li id="prompt-head">Image Generation Prompt</li>
+          <li id="prompt-text">Image Generation Prompt</li>
         </ol>
 
       </div>
@@ -88,7 +88,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="assets/img/generator/image21.jpeg" alt="">
+                  <img src="assets/img/generator/image21.jpeg" alt="" id="prompt-image">
                 </div>
 
                 <div class="swiper-slide">
@@ -173,24 +173,15 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
   <script src="assets/js/productselector.js"></script>
   <script>
     window.onload = function () {
       document.getElementById("medium-button").click();
       document.getElementById("tshirt-button").click();
+      document.querySelector("#prompt-text").innerHTML = promptText;
+      var slide1 = document.querySelector(".swiper-slide:first-child img");
+      slide1.src = imageUrl;
     }</script>
-  <script>
-    var data = {
-      prompt: "The image should be a Giant Robot in the style of oil painting and be set against a Serengeti background.",
-      imageurl: "https://replicate.delivery/pbxt/STMXiM6ZG9aDC5X2tdoqWuent4nveBWOspUACBREmeZ9jymgA/out-0.png"
-    };
-    var slide1 = document.querySelector(".swiper-slide:first-child img");
-    slide1.src = data.imageurl;
-    document.querySelector("#prompt-head").innerHTML = data.prompt;
-  </script>
-
-
 </body>
 
 </html>

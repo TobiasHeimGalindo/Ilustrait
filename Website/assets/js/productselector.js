@@ -1,3 +1,7 @@
+let imageUrl = localStorage.getItem('imageUrl');
+let promptText = localStorage.getItem('promptText');
+
+
 function selectType(element) {
     let types = document.querySelectorAll('.type-button');
     types.forEach(type => type.classList.remove('active'));
