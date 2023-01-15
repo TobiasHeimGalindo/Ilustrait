@@ -91,12 +91,12 @@
                   <img src="assets/img/generator/image21.jpeg" alt="" id="prompt-image">
                 </div>
 
-                <div class="swiper-slide">
+                <div class="swiper-slide" id="prompt-image-container">
                   <img src="assets/img/product/tshirt.png" alt="" id="tshirt-mockup-image">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/product/hoodie.png" alt="">
+                  <img src="assets/img/product/hoodie.png" alt="Sweatshirt product photo">
                 </div>
 
               </div>
@@ -104,9 +104,9 @@
             </div>
           </div>
 
-          <div class="col-lg-5 d-flex flex-column">
-            <h3 id="product-name">Product Name</h3>
-            <h4 id="product-price">Price</h4>
+          <div class="col-lg-5 d-flex flex-column" id="product-details-column">
+            <h2 id="product-name">Product Name</h2>
+            <h3 id="product-price">Price</h3>
 
             <div class="d-flex">
               <h6>Select Type</h6>
@@ -137,9 +137,38 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12 justify-content-center">
+            <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-desc-tab" data-bs-toggle="tab" data-bs-target="#nav-desc" type="button" role="tab" aria-controls="nav-desc" aria-selected="true">Description</button>
+                <button class="nav-link" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-details" type="button" role="tab" aria-controls="nav-details" aria-selected="false">Product Details</button>
+                <button class="nav-link" id="nav-source-tab" data-bs-toggle="tab" data-bs-target="#nav-source" type="button" role="tab" aria-controls="nav-source" aria-selected="false">Source</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+                <h2 class="pt-2">Introducing our unique and one-of-a-kind AI generated t-shirts and sweatshirts!</h4>
+                <p>Each design is created using the latest stable-diffusion AI Technology, resulting in stunning and high-quality images that are sure to catch the eye of anyone who sees them.</p>
+                <p>Our t-shirts and sweatshirts feature different sizes with a variety of customizable, personal motives, such as vibrant city skylines, tropical paradise beaches, futuristic cyberpunk scenes, and much more. Whether you're looking for something bold and colorful or something more minimalist and abstract, you are the creator of your very own motive.</p>
+                <p>But that's not all – our t-shirts and sweatshirts are made of outstanding quality materials, ensuring that they will be comfortable to wear and long-lasting. Plus, each shirt is printed using a state-of-the-art printing process to ensure that the image stays vibrant and true to life, wash after wash.</p>
+                <p>So why settle for a boring old t-shirt when you can have one that's truly unique? Order yours today and stand out from the crowd with a one-of-a-kind AI generated t-shirt or sweatshirt!</p>
+            </div>
+              </div>
+              <div class="tab-pane fade" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">...</div>
+              <div class="tab-pane fade" id="nav-source" role="tabpanel" aria-labelledby="nav-source-tab">
+                  <p>Our blank products are sourced from Comfort Colors in Honduras.</p>
+                  <p>Comfort Colors offer timeless, comfortable fashion pieces that come in lush nature-inspired shades. Their garments represent authenticity and a lived-in attitude.</p>
+                  <p>Read more about <a href='https://comfortcolors.com/our-brand/'>Comfort Colors</a></p>
+                  <p>Learn about <a href='https://comfortcolors.com/en-us/sustainability/made-with-respect'>sustainability and Comfort Colors</a></p>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section><!-- End Product -->
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
