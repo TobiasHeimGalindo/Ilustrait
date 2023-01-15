@@ -107,8 +107,8 @@
             <ul class="list-group mb-3">
               <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 class="my-0">Product name</h6>
-                  <small class="text-muted">variation</small>
+                  <h6 class="my-0" id="cart-product-name">Product name</h6>
+                  <small class="text-muted" id="cart-product-variation">variation</small>
                 </div>
                 <span class="text-muted" id="product-cart">€ 0.00 </span>
               </li>
@@ -168,7 +168,6 @@
                     Please enter a valid email address for shipping updates.
                   </div>
                 </div>
-
                 <div class="col-12">
                   <label for="address" class="form-label">Address</label>
                   <input type="text" class="form-control" id="address" placeholder="Str. & number" required />
@@ -176,7 +175,13 @@
                     Please enter your shipping address.
                   </div>
                 </div>
-
+                <div class="col-12">
+                  <label for="address" class="form-label">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="Backnang" required />
+                  <div class="invalid-feedback">
+                    Please enter your city.
+                  </div>
+                </div>
                 <div class="col-md-5">
                   <label for="country" class="form-label">Country Code</label>
                   <select class="form-select" id="country" required>
@@ -187,7 +192,6 @@
                     Please select a valid country.
                   </div>
                 </div>
-
                 <div class="col-md-4">
                   <label for="state" class="form-label">State Code</label>
                   <select class="form-select" id="state" required>
@@ -198,27 +202,23 @@
                     Please provide a valid state.
                   </div>
                 </div>
-
                 <div class="col-md-3">
                   <label for="zip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required />
-                  <div class="invalid-feedback">Zip code required.</div>
+                  <input type="text" class="form-control" id="zip" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid zip code.
+                  </div>
                 </div>
-              </div>
-
-              <hr class="my-4" />
-
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="save-info" />
-                <label class="form-check-label" for="save-info">Save this information for next time</label>
-              </div>
 
               <hr class="my-4" />
               <!--hier eine submit funktion damit wir die daten abschicken-->
-              <button class="w-100 btn btn-primary btn-lg" type="submit">
+              <button class="w-100 btn btn-primary btn-lg" type="submit" id="submitButton">
                 Continue to checkout
               </button>
             </form>
+            <button class="w-100 btn btn-primary btn-lg" type="submit" id="stripeButton">
+              Stripe Test
+            </button>
           </div>
         </div>
       </div>
