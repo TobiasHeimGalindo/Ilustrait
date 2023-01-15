@@ -90,6 +90,16 @@ to be reponsive for other sizes:
   line-height: 30px;
 }
 
+.create-your-own {
+  width: 75%;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.custom-prompt-content {
+  margin: 10px;
+}
+
 
 .prompt-block {
   display: flex;
@@ -128,7 +138,7 @@ button.type-button img {
   align-items: center;
   justify-content: space-around;
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 8px;
   font-weight: 500;
   font-size: 16px;
