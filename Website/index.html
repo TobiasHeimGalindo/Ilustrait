@@ -176,15 +176,19 @@
                 </select> background.</p>
             </div>
             <div class="create-your-own">
-              <form>
-                <div class="form-group">
-                  <label for="custom-prompt-input">Custom Prompt</label>
-                  <textarea class="form-control" id="custom-prompt-textarea" rows="3" cols="50"></textarea>
-                  <small id="customPromptHelp" class="form-text text-muted">Enter your custom prompt here</small>
-                </div>
-                <button type="submit" class="btn btn-primary" id="submit-button" onclick="updateDisplayDiv()">Submit</button>
-              </form>
-              <button class="btn btn-primary" onclick="redirectToProduct()">Print this motive</button>
+              <div class="custom-prompt-content">
+                <form>
+
+                  <div class="form-group">
+                    <label for="custom-prompt-input">Custom Prompt</label>
+                    <textarea class="form-control" id="custom-prompt-textarea" rows="3" cols="50"></textarea>
+                    <small id="customPromptHelp" class="form-text text-muted">Enter your custom prompt here</small>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="submit-button"
+                    onclick="updateDisplayDiv(), submitPrompt()">Submit</button>
+                    <button class="btn btn-primary d-none" id="print-button" onclick="redirectToProduct()">Print this motive</button>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -202,6 +206,7 @@
               <div class="prompt-preview-card">
                 <div id="display-div">
                   <!--displaying the prompts in this div.innerHTML-->
+                
                 </div>
                 <div class="copy-container">
                   <button type="button" class="btn btn-primary" id="copy-button">Copy</button>

@@ -1,125 +1,125 @@
-const promptGeneratorButton = document.getElementById('prompt-generator-button');
-const createYourOwnButton = document.getElementById('create-your-own-button');
-const promptGeneratorDiv = document.querySelector('.prompt-generator');
-const createYourOwnDiv = document.querySelector('.create-your-own');
+const promptGeneratorButton = document.getElementById(
+  "prompt-generator-button"
+);
+const createYourOwnButton = document.getElementById("create-your-own-button");
+const promptGeneratorDiv = document.querySelector(".prompt-generator");
+const createYourOwnDiv = document.querySelector(".create-your-own");
 
 // By default, show the prompt generator div and hide the create your own div
-promptGeneratorDiv.style.display = 'block';
-createYourOwnDiv.style.display = 'none';
+promptGeneratorDiv.style.display = "block";
+createYourOwnDiv.style.display = "none";
 
-promptGeneratorButton.addEventListener('click', () => {
-    promptGeneratorDiv.style.display = 'block';
-    createYourOwnDiv.style.display = 'none';
-    updateDisplayDiv();
+promptGeneratorButton.addEventListener("click", () => {
+  promptGeneratorDiv.style.display = "block";
+  createYourOwnDiv.style.display = "none";
+  updateDisplayDiv();
 });
 
-createYourOwnButton.addEventListener('click', () => {
-    promptGeneratorDiv.style.display = 'none';
-    createYourOwnDiv.style.display = 'block';
-    updateDisplayDiv();
+createYourOwnButton.addEventListener("click", () => {
+  promptGeneratorDiv.style.display = "none";
+  createYourOwnDiv.style.display = "block";
+  updateDisplayDiv();
 });
 
-const displayDiv = document.getElementById('display-div');
+const displayDiv = document.getElementById("display-div");
 
-const dropdown1 = document.getElementById('dropdown1');
-const dropdown2 = document.getElementById('dropdown2');
-const dropdown3 = document.getElementById('dropdown3');
-const customPromptTextarea = document.getElementById('custom-prompt-textarea');
-const submitButton = document.getElementById('submit-button');
+const dropdown1 = document.getElementById("dropdown1");
+const dropdown2 = document.getElementById("dropdown2");
+const dropdown3 = document.getElementById("dropdown3");
+const customPromptTextarea = document.getElementById("custom-prompt-textarea");
+const submitButton = document.getElementById("submit-button");
+const printButton = document.getElementById("print-button");
 var image = document.getElementById("selectedImage");
 
-dropdown1.addEventListener('change', updateDisplayDiv);
-dropdown2.addEventListener('change', updateDisplayDiv);
-dropdown3.addEventListener('change', updateDisplayDiv);
-submitButton.addEventListener('click', buttonClicked, updateDisplayDiv);
+dropdown1.addEventListener("change", updateDisplayDiv);
+dropdown2.addEventListener("change", updateDisplayDiv);
+dropdown3.addEventListener("change", updateDisplayDiv);
 
 function updateDisplayDiv() {
-    if (promptGeneratorDiv.style.display === 'block') {
+  if (promptGeneratorDiv.style.display === "block") {
+    const dropdown1Value = dropdown1.value;
+    const dropdown2Value = dropdown2.value;
+    const dropdown3Value = dropdown3.value;
 
-        const dropdown1Value = dropdown1.value;
-        const dropdown2Value = dropdown2.value;
-        const dropdown3Value = dropdown3.value;
-
-        displayDiv.innerHTML = `The image should be a <strong>${dropdown1Value}</strong> in the style of <strong>${dropdown2Value}</strong> and be set against a <strong>${dropdown3Value}</strong> background.`;
-
-    } else {
-        const customPromptValue = customPromptTextarea.value;
-        displayDiv.innerHTML = customPromptValue;
-    }
-
-    // Reset copy button if value changes
-    copyButton.style.backgroundColor = ''
-}
-
-
-
-
-function buttonClicked() {
-
-
+    displayDiv.innerHTML = `The image should be a <strong>${dropdown1Value}</strong> in the style of <strong>${dropdown2Value}</strong> and be set against a <strong>${dropdown3Value}</strong> background.`;
+  } else {
     const customPromptValue = customPromptTextarea.value;
-    console.log("button clicked", customPromptValue)
-
-    if (customPromptValue.trim !== "") {
-        sendPrompt(customPromptValue);
-        console.log("sendPrompt aufgerufen!", customPromptValue);
+    if (customPromptValue.trim() === "") {
+      displayDiv.innerHTML =
+        '<small id="customPromptHelp" class="form-text text-muted">Copy your prompts here</small>';
+    } else {
+      displayDiv.innerHTML = customPromptValue;
     }
+  }
+
+  // Reset copy button if value changes
+  copyButton.style.backgroundColor = "";
 }
 
+function submitPrompt() {
+  const customPromptValue = customPromptTextarea.value;
+  console.log("button clicked", customPromptValue);
 
+  if (customPromptValue.trim !== "") {
+    sendPrompt(customPromptValue);
+    console.log("sendPrompt aufgerufen!", customPromptValue);
+  }
+}
 
-const copyButton = document.getElementById('copy-button');
-copyButton.addEventListener('click', () => {
-    const range = document.createRange();
-    range.selectNode(displayDiv);
-    window.getSelection().addRange(range);
+const copyButton = document.getElementById("copy-button");
+copyButton.addEventListener("click", () => {
+  const range = document.createRange();
+  range.selectNode(displayDiv);
+  window.getSelection().addRange(range);
 
-    const success = document.execCommand('copy');
+  const success = document.execCommand("copy");
 
-    // Clear the selection
-    window.getSelection().removeAllRanges();
+  // Clear the selection
+  window.getSelection().removeAllRanges();
 
-    if (success) {
-        copyButton.style.backgroundColor = 'green';
-    }
+  if (success) {
+    copyButton.style.backgroundColor = "green";
+  }
 });
 
 // logs the value that the user has written, later send the value through the api here
 
-document.querySelector('form').addEventListener('submit', (textvalue) => {
-    textvalue.preventDefault();
-
-
-
+document.querySelector("form").addEventListener("submit", (textvalue) => {
+  textvalue.preventDefault();
 });
 
 async function sendPrompt(promptText) {
-    console.log("sendGrid wurde aufgerufen!", promptText)
-    const data = {
-        "prompt": promptText
-    };
+  console.log("sendGrid wurde aufgerufen!", promptText);
+  const data = {
+    prompt: promptText,
+  };
 
-    await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+  submitButton.disabled = true;
+  printButton.disabled = true;
+
+  await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      image.src = data["imageurl"];
+      localStorage.setItem("imageUrl", data["imageurl"]);
+      localStorage.setItem("promptText", promptText);
+      submitButton.disabled = false;
+      printButton.disabled = false;
+      printButton.classList.remove("d-none");
     })
-        .then((response) => response.json())
-        .then((data) => {
-            image.src = data['imageurl'];
-            localStorage.setItem('imageUrl', data['imageurl']);
-            localStorage.setItem('promptText', promptText);
-
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
-};
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
 
 function redirectToProduct() {
-    window.location.href = "product-details.html";
-};
+  window.location.href = "product-details.html";
+}
 
-window.addEventListener('load', updateDisplayDiv)
+window.addEventListener("load", updateDisplayDiv);
