@@ -14,9 +14,36 @@ function get_images_for_gallery() {
                 {
                     const element = create_gallery_element(data["message"], data["status"])
                     container.appendChild(element)
-                    console.log("element", element)
                 })
     }     
+}
+
+function get_pregenerated_images_for_gallery(){
+        const container = document.getElementById("gallery_container")
+        
+        const prompt_list = [
+            "Colorful graffiti street art featuring a robot", 
+            "Elegant geometric patterns with a cat lounging", 
+            "Fantasy forest landscape with a dragon and a castle",
+            "Futuristic cyberpunk city with a walking robot",
+            "Retro futuristic space exploration with a robot companion",
+            "Sci-fi inspired robot design in front of a cityscape",
+            "Tropical paradise beach scene with a robotic palm tree",
+            "Vibrant sunset over a city skyline"
+        ]
+
+        const img_url_list = []
+
+        prompt_list.forEach(element => {
+            const folder = "assets/img/carousel_images/"
+            var path = folder.concat(element, ".png")
+            img_url_list.push(path)
+        }); 
+
+        for (let i = 0; i < prompt_list.length; i++){
+            const element = create_gallery_element(img_url_list[i], prompt_list[i])
+            container.appendChild(element)       
+        }
 }
 
 function create_gallery_element(imageUrl, prompt) {
