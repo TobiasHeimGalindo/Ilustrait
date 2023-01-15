@@ -108,14 +108,18 @@ async function sendPrompt(promptText) {
     })
         .then((response) => response.json())
         .then((data) => {
-            let imageUrl = data.imageUrl
-            image.src = data['imageurl']
+            image.src = data['imageurl'];
+            localStorage.setItem('imageUrl', data['imageurl']);
+            localStorage.setItem('promptText', promptText);
 
         })
         .catch((error) => {
             console.error("Error:", error);
         });
-
-
 };
+
+function redirectToProduct() {
+    window.location.href = "product-details.html";
+};
+
 window.addEventListener('load', updateDisplayDiv)

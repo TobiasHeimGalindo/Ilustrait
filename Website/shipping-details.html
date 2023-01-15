@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Product Page - Ilustrait</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.12.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="" />
+        <span>Ilustrait</span>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li>
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+          <li class="dropdown">
+            <a><span>Shop</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">Order Tracking</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="getstarted scrollto" href="#start">Get started</a>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li id="breadcrumb-name"></li>
+          <li id="prompt-text">Shipping details</li>
+        </ol>
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-primary">Your cart</span>
+            </h4>
+            <div class="pb-4">
+              <div class="product-summary-body">
+                <div class="product-image">
+                  <img id="product-image" alt="Product Image" />
+                </div>
+                <div class="product-info">
+                  <div class="product-name" id="product-name"></div>
+                  <div class="product-price" id="product-price"></div>
+                </div>
+                <div class="product-quantity">
+                  <button class="btn btn-secondary count-btn" id="increment-btn">
+                    +
+                  </button>
+                  <span id="product-quantity">1</span>
+                  <button class="btn btn-secondary count-btn" id="decrement-btn">
+                    -
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0" id="cart-product-name">Product name</h6>
+                  <small class="text-muted" id="cart-product-variation">variation</small>
+                </div>
+                <span class="text-muted" id="product-cart">€ 0.00 </span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between lh-sm d-none text-success" id="promo-code-list">
+                <div>
+                  <h6 class="my-0">Promo code</h6>
+                  <small class="text-success" id="promo-code-name">variation</small>
+                </div>
+                <span class="text-success" id="promo-code-value">€ 0.00 </span>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total (EUR)</span>
+                <strong id="total-price">€ 0.00</strong>
+              </li>
+
+              <li class="list-group-item d-flex justify-content-between vat">
+                <span>incl.19% VAT (EUR)</span>
+                <strong id="vat-amount">€ 0.00</strong>
+              </li>
+            </ul>
+
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" id="promo-input" class="form-control" placeholder="Promo code" />
+                <button type="submit" id="redeem" class="btn btn-secondary">
+                  Redeem
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <h4 class="mb-3">Shipping & Billing address</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="address" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="Str. & number" required />
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="address" class="form-label">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="Backnang" required />
+                  <div class="invalid-feedback">
+                    Please enter your city.
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <label for="country" class="form-label">Country Code</label>
+                  <select class="form-select" id="country" required>
+                    <option value="">Choose...</option>
+                    <option>DE</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="state" class="form-label">State Code</label>
+                  <select class="form-select" id="state" required>
+                    <option value="">Choose...</option>
+                    <option>BW</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="zip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="zip" required />
+                  <div class="invalid-feedback">
+                    Please provide a valid zip code.
+                  </div>
+                </div>
+
+              <hr class="my-4" />
+              <!--hier eine submit funktion damit wir die daten abschicken-->
+              <button class="w-100 btn btn-primary btn-lg" type="submit" id="submitButton">
+                Continue to checkout
+              </button>
+            </form>
+            <button class="w-100 btn btn-primary btn-lg" type="submit" id="stripeButton">
+              Stripe Test
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Ilustrait</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/shippingdetails.js"></script>
+  <script>
+    window.onload = function () {
+      updateCart();
+    }
+  </script>
+</body>
+
+</html>
