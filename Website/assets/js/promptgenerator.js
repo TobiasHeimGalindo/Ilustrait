@@ -97,7 +97,9 @@ async function sendPrompt(promptText) {
   submitButton.disabled = true;
   printButton.disabled = true;
 
-  await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
+  // replace later
+  // https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp
+  await fetch("https://hook.eu1.make.com/itk399jo9vrbji3y4x2yg565h4bj98rv", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

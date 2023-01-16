@@ -53,42 +53,45 @@ function changeSelection() {
 }
 
 async function generateTshirtMockup(imageUrl) {
-    console.log("generateTshirtMockup wurde aufgerufen!", imageUrl)
+  console.log("generateTshirtMockup wurde aufgerufen!", imageUrl);
 
-    let imageUrlJson = { imageurl: imageUrl };
+  let imageUrlJson = { imageurl: imageUrl };
 
-    // Add spinner and text
-    let img = document.querySelector("#tshirt-mockup-image");
-    let spinner = document.createElement("div");
-    spinner.classList.add("spinner-border", "text-primary", "spinner-position");
-    spinner.setAttribute("role", "status");
-    let text = document.createElement("p");
-    text.classList.add("text-center", "spinner-position");
-    text.innerHTML = "generating T-Shirt Preview";
-    img.parentNode.insertBefore(spinner, img);
-    spinner.parentNode.insertBefore(text, spinner.nextSibling);
+  // Add spinner and text
+  let img = document.querySelector("#tshirt-mockup-image");
+  let spinner = document.createElement("div");
+  spinner.classList.add("spinner-border", "text-primary", "spinner-position");
+  spinner.setAttribute("role", "status");
+  let text = document.createElement("p");
+  text.classList.add("text-center", "spinner-position");
+  text.innerHTML = "generating T-Shirt";
+  img.parentNode.insertBefore(spinner, img);
+  spinner.parentNode.insertBefore(text, spinner.nextSibling);
 
-    // await fetch("https://hook.eu1.make.com/fj7wuptvvhfh4rrdydr4h0i5vgatq43a", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(imageUrlJson),
-    // })
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //         console.log("Success:", data);
-    //         mockupImageUrl = data.mockupurl;
-    //         img.src = mockupImageUrl;
-    //         product.mockupImageUrl = mockupImageUrl;
-    //         localStorage.setItem('product', JSON.stringify(product));
-    //         // remove spinner and text
-    //         img.parentNode.removeChild(spinner);
-    //         img.parentNode.removeChild(text);
-    //     })
-    //     .catch((error) => {
-    //         console.error("Error:", error);
-    //     });
+  // replace later:
+  // https://hook.eu1.make.com/fj7wuptvvhfh4rrdydr4h0i5vgatq43a
+
+  await fetch("https://hook.eu1.make.com/pyjymqcjum4haeuj4l0g8u3762aw2j4o", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(imageUrlJson),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      mockupImageUrl = data.mockupurl;
+      img.src = mockupImageUrl;
+      product.mockupImageUrl = mockupImageUrl;
+      localStorage.setItem("product", JSON.stringify(product));
+      // remove spinner and text
+      img.parentNode.removeChild(spinner);
+      img.parentNode.removeChild(text);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 }
 
 function redirectToShippingDetails() {

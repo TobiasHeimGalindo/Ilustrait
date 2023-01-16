@@ -245,6 +245,16 @@ button.type-button img {
 
 .spinner-position{
   position: absolute;
+
+
+}
+
+.slide-relative {
+  position: relative;
+}
+.slide-relative p {
+  font-weight: 600;
+  bottom: 27%;
 }
 
 /*--------------------------------------------------------------

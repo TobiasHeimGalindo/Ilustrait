@@ -37,8 +37,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="" />
-        <span>Ilustrait</span>
+        <img src="assets/img/ilustrait_logo.png" alt="" />
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -212,12 +211,9 @@
 
               <hr class="my-4" />
               <!--hier eine submit funktion damit wir die daten abschicken-->
-              <button class="w-100 btn btn-primary btn-lg" type="submit" id="submitButton">
-                Continue to checkout
-              </button>
             </form>
             <button class="w-100 btn btn-primary btn-lg" type="submit" id="stripeButton">
-              Stripe Test
+              Continue to checkout
             </button>
           </div>
         </div>
@@ -243,8 +239,35 @@
   </footer>
   <!-- End Footer -->
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Payment Successful!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="backToIndex()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Thank you for your Order!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="backToIndex()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
+
+      
+
+
+  <!-- jQuery -->
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
