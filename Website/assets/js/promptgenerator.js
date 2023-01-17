@@ -1,3 +1,11 @@
+function goToFaq() {
+  const faqDiv = document.getElementById("finalFAQ");
+  faqDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
+
 const promptGeneratorButton = document.getElementById(
   "prompt-generator-button"
 );
