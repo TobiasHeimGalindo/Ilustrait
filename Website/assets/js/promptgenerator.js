@@ -1,3 +1,11 @@
+function goToFaq() {
+  const faqDiv = document.getElementById("finalFAQ");
+  faqDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+
+
 const promptGeneratorButton = document.getElementById(
   "prompt-generator-button"
 );
@@ -97,7 +105,13 @@ async function sendPrompt(promptText) {
   submitButton.disabled = true;
   printButton.disabled = true;
 
-  await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
+  // show spinner and hide image
+  document.getElementById("spinner").classList.remove("d-none");
+  document.getElementById("selectedImage").classList.add("d-none");
+
+  // replace later
+  // https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp
+  await fetch("https://hook.eu1.make.com/itk399jo9vrbji3y4x2yg565h4bj98rv", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -112,6 +126,10 @@ async function sendPrompt(promptText) {
       submitButton.disabled = false;
       printButton.disabled = false;
       printButton.classList.remove("d-none");
+
+      // hide spinner and show image
+      document.getElementById("spinner").classList.add("d-none");
+      document.getElementById("selectedImage").classList.remove("d-none");
     })
     .catch((error) => {
       console.error("Error:", error);

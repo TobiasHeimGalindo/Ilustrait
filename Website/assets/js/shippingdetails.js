@@ -78,13 +78,12 @@ document
     } else if (productType === "Sweatshirt") {
       priceId = "price_1MO2htDdvizQIRyjtxhZ3RNO";
     } else {
-      // handle error for unknown product type
     }
     const data = {
       price_id: priceId,
       quantity: quantity,
+      success_url: "https://www.google.de/",
     };
-    console.log("data is set to: " + data);
     try {
       const response = await fetch(
         "https://hook.eu1.make.com/wjpp1ksrwrbalut1aa790fwyjivs2lf0",
@@ -97,89 +96,97 @@ document
       if (response.status === 200) {
         const json = await response.json();
         const url = json.url;
-        const newButton = document.createElement("button");
-        newButton.innerText = "Pay via Stripe";
-        newButton.onclick = () => window.open(url, "_blank");
-        document.body.appendChild(newButton);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  });
+        window.open(url, "_blank");
 
-document
-  .getElementById("submitButton")
-  .addEventListener("click", async function (event) {
-    event.preventDefault();
+        const stripeSessionBody = {
+          session_id: json.id,
+        };
 
-    const data = {
-      store_id: 9471577,
-      recipient: {
-        name:
-          document.getElementById("firstName").value +
-          " " +
-          document.getElementById("lastName").value,
-        address1: document.getElementById("address").value,
-        city: document.getElementById("city").value,
-        state_code: document.getElementById("state").value,
-        country_code: document.getElementById("country").value,
-        zip: document.getElementById("zip").value,
-      },
-      items: [
-        {
-          variant_id: product.variant_id,
-          quantity: quantity,
-          files: [
+        var stripeSessionJson = {};
+
+        while (
+          stripeSessionJson.payment_status !== "paid" ||
+          stripeSessionJson.status !== "complete"
+        ) {
+          await new Promise((resolve) => setTimeout(resolve, 5000));
+          const updatedResponse = await fetch(
+            "https://hook.eu1.make.com/dqooacvb2zxhx10o55pb99ixbanuih3q",
             {
-              url: product.imageUrl,
-            },
-          ],
-        },
-      ],
-    };
+              method: "POST",
+              body: JSON.stringify(stripeSessionBody),
+              headers: { "Content-Type": "application/json" },
+            }
+          );
+          const updatedJson = await updatedResponse.json();
 
-    const example = {
-      store_id: 9471577,
-      recipient: {
-        name: "John Doe",
-        address1: "19749 Dearborn St",
-        city: "Chatsworth",
-        state_code: "CA",
-        country_code: "US",
-        zip: "91311",
-      },
-      items: [
-        {
-          variant_id: 13261,
-          quantity: 1,
-          files: [
-            {
-              url: "https://replicate.delivery/pbxt/yoputtX9Q3YePSfF1Te8Lp6cXqPIrXARTE7UOBh0XvhTwakgA/out-0.png",
-            },
-          ],
-        },
-      ],
-    };
-
-    try {
-      const response = await fetch(
-        "https://hook.eu1.make.com/fgba9xgdjeo4mibbrebn9ge1ybve6wdv",
-        {
-          method: "POST",
-          body: JSON.stringify(example),
-          headers: { "Content-Type": "application/json" },
+          stripeSessionJson = updatedJson;
+          if (
+            stripeSessionJson.payment_status === "paid" &&
+            stripeSessionJson.status
+          ) {
+            await printfulPost();
+          }
         }
-      );
-
-      if (response.status === 200) {
-        // Successful order
-        console.log("Order submitted successfully!");
-        console.log(response);
-      } else {
-        // Handle error
-        console.error("Error submitting order: " + response.status);
       }
     } catch (error) {
       console.error(error);
     }
   });
+
+function showModal() {
+  $("#exampleModal").modal("show");
+}
+
+function backToIndex() {
+  window.location.href = "index.html";
+}
+
+async function printfulPost() {
+  const data = {
+    store_id: 9471577,
+    recipient: {
+      name:
+        document.getElementById("firstName").value +
+        " " +
+        document.getElementById("lastName").value,
+      address1: document.getElementById("address").value,
+      city: document.getElementById("city").value,
+      state_code: document.getElementById("state").value,
+      country_code: document.getElementById("country").value,
+      zip: document.getElementById("zip").value,
+    },
+    items: [
+      {
+        variant_id: product.variant_id,
+        quantity: quantity,
+        files: [
+          {
+            url: product.imageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
+  try {
+    const response = await fetch(
+      "https://hook.eu1.make.com/fgba9xgdjeo4mibbrebn9ge1ybve6wdv",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    if (response.status === 200) {
+      // Successful order
+      console.log("Order successful!");
+      showModal()
+    } else {
+      // Handle error
+      console.error("Error submitting order: " + response.status);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -231,8 +231,31 @@ button.type-button img {
   color: grey;
 }
 
+#prompt-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+}
+
+.spinner-border {
+  width: 8rem;
+  height: 8rem;
+}
+
+.spinner-position{
+  position: absolute;
 
 
+}
+
+.slide-relative {
+  position: relative;
+}
+.slide-relative p {
+  font-weight: 600;
+  bottom: 27%;
+}
 
 /*--------------------------------------------------------------
 # Sections
