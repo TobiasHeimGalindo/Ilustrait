@@ -135,7 +135,7 @@ document
   });
 
 function showModal() {
-  $("#exampleModal").modal("show");
+  $("#orderSuccess").modal("show");
 }
 
 function backToIndex() {
@@ -182,6 +182,7 @@ async function printfulPost() {
     if (response.status === 200) {
       // Successful order
       console.log("Order successful!");
+
       showModal()
     } else {
       // Handle error
