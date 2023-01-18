@@ -109,9 +109,11 @@ async function sendPrompt(promptText) {
   document.getElementById("spinner").classList.remove("d-none");
   document.getElementById("selectedImage").classList.add("d-none");
 
-  // replace later
+  // correct one:
   // https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp
-  await fetch("https://hook.eu1.make.com/itk399jo9vrbji3y4x2yg565h4bj98rv", {
+  // backup:
+  // https://hook.eu1.make.com/itk399jo9vrbji3y4x2yg565h4bj98rv
+  await fetch("https://hook.eu1.make.com/3vrcuwm8fy53s56oa3pjwxe661c20ngp", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

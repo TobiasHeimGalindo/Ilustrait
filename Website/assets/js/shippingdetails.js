@@ -82,7 +82,8 @@ document
     const data = {
       price_id: priceId,
       quantity: quantity,
-      success_url: "https://www.google.de/",
+      success_url: "https://ilustrait.timobihlmaier.de/",
+      cancel_url: "https://ilustrait.timobihlmaier.de/shipping-details.html",
     };
     try {
       const response = await fetch(

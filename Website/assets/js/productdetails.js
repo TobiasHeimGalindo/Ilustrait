@@ -68,10 +68,12 @@ async function generateTshirtMockup(imageUrl) {
   img.parentNode.insertBefore(spinner, img);
   spinner.parentNode.insertBefore(text, spinner.nextSibling);
 
-  // replace later:
+  // correct one:
   // https://hook.eu1.make.com/fj7wuptvvhfh4rrdydr4h0i5vgatq43a
+  // backup:
+  // https://hook.eu1.make.com/pyjymqcjum4haeuj4l0g8u3762aw2j4o
 
-  await fetch("https://hook.eu1.make.com/pyjymqcjum4haeuj4l0g8u3762aw2j4o", {
+  await fetch("https://hook.eu1.make.com/fj7wuptvvhfh4rrdydr4h0i5vgatq43a", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
