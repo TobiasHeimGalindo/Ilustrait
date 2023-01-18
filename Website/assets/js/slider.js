@@ -69,10 +69,10 @@ function create_gallery_element(imageUrl, prompt) {
     img.alt = '';
     profileDiv.appendChild(img);
 
-    // Create the h4 element
-    const h4Element = document.createElement('h4');
-    h4Element.innerHTML = `<b>${prompt}</b>`;
-    profileDiv.appendChild(h4Element);
+    // Create the h3 element
+    const h3Element = document.createElement('h3');
+    h3Element.innerHTML = `<b>${prompt}</b>`;
+    profileDiv.appendChild(h3Element);
   
     return testimonialElement;
 }
@@ -82,8 +82,8 @@ function create_gallery_element(imageUrl, prompt) {
 <div class="testimonial-item">
   <div class="profile mt-auto">
     <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-    <h4><b>A tank on a green Field</b></h4>
-    <h4>Sara Willson</h4>
+    <b>A tank on a green Field</b>
+    Sara Willson
   </div>
 </div>
 </div>
