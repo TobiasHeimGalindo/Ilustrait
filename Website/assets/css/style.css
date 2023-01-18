@@ -35,7 +35,7 @@ a:hover {
 }
 
 .text-primary {
-  color: #565273 !important
+  color: #565273 !important;
 }
 
 h1,
@@ -46,7 +46,6 @@ h5,
 h6 {
   font-family: "Inter", sans-serif;
 }
-
 
 /*--------------------------------------------------------------
 # custom css classes
@@ -61,7 +60,7 @@ to be reponsive for other sizes:
   font-weight: 400;
   font-size: 18px;
   line-height: 32px;
-  color: #646F79;
+  color: #646f79;
 }
 
 .prompt-parent {
@@ -100,7 +99,6 @@ to be reponsive for other sizes:
   margin: 10px;
 }
 
-
 .prompt-block {
   display: flex;
   align-items: center;
@@ -110,12 +108,12 @@ to be reponsive for other sizes:
 .prompt-block select {
   display: inline-block;
   width: auto;
-  min-width: 230px
+  min-width: 230px;
 }
 
 .prompt-block p {
   font-size: 25px;
-  font-weight: 600
+  font-weight: 600;
 }
 
 .image-rounded {
@@ -137,7 +135,7 @@ button.type-button img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 8px;
   font-weight: 500;
@@ -219,7 +217,6 @@ button.type-button img {
   line-height: 30px;
 }
 
-
 .product-info .product-type,
 .product-info .product-size,
 .product-info .product-price {
@@ -235,7 +232,7 @@ button.type-button img {
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
 }
 
 .spinner-border {
@@ -243,10 +240,8 @@ button.type-button img {
   height: 8rem;
 }
 
-.spinner-position{
+.spinner-position {
   position: absolute;
-
-
 }
 
 .slide-relative {
@@ -308,7 +303,7 @@ section {
 
 @media (max-width: 992px) {
   .breadcrumbs {
-    margin-top: 57px;
+    margin-top: 80px;
   }
 }
 
@@ -335,11 +330,11 @@ section {
   text-decoration: underline;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #8894f6;
@@ -422,7 +417,6 @@ section {
   margin-top: 3px;
 }
 
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -469,8 +463,8 @@ section {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
-  color: #F9B756;
+.navbar li:hover > a {
+  color: #f9b756;
 }
 
 .navbar .getstarted,
@@ -485,7 +479,7 @@ section {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #F9B756;
+  background: #f9b756;
   /*hover color*/
 }
 
@@ -522,11 +516,11 @@ section {
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
   color: #565273;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -538,7 +532,7 @@ section {
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -550,7 +544,7 @@ section {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
@@ -621,7 +615,7 @@ section {
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
   color: #565273;
 }
 
@@ -656,11 +650,11 @@ section {
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
   color: #565273;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
@@ -719,7 +713,6 @@ section {
   text-align: right;
   width: 400px;
 }
-
 
 .hero-img img.top {
   z-index: 2;
@@ -797,7 +790,7 @@ section {
 
 .textbox-left {
   position: absolute;
-  background-color: #FFF;
+  background-color: #fff;
   margin: 0 30% 0 10%;
   padding: 5px 15px 5px 15px;
   bottom: 5%;
@@ -807,14 +800,13 @@ section {
 
 .textbox-right {
   position: absolute;
-  background-color: #FFF;
+  background-color: #fff;
   margin: 0 10% 0 30%;
   padding: 5px 15px 5px 15px;
   bottom: 5%;
   border-radius: 8px;
   box-shadow: 2px 2px 4px 1px;
 }
-
 
 .background_box {
   background-color: #565273;
@@ -827,6 +819,11 @@ section {
   z-index: 0;
 }
 
+@media (max-width: 991px) {
+  .hide-mobile {
+    display: none;
+  }
+}
 
 /*--------------------------------------------------------------
 # Index Page
@@ -1553,7 +1550,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1561,7 +1561,10 @@ section {
   border: 1px solid #565273;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #565273;
 }
 
@@ -1584,7 +1587,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1979,7 +1982,7 @@ section {
   padding: 12px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #565273;
   border: 0;
   padding: 10px 30px;
@@ -1988,7 +1991,7 @@ section {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #5969f3;
 }
 
@@ -2061,7 +2064,7 @@ section {
   margin: 0;
 }
 
-.blog .entry .entry-meta ul li+li {
+.blog .entry .entry-meta ul li + li {
   padding-left: 20px;
 }
 
@@ -2178,7 +2181,7 @@ section {
   display: inline-block;
 }
 
-.blog .entry .entry-footer .tags li+li::before {
+.blog .entry .entry-footer .tags li + li::before {
   padding-right: 6px;
   color: #6c757d;
   content: ",";
@@ -2397,7 +2400,7 @@ section {
   position: relative;
 }
 
-.blog .sidebar .search-form form input[type=text] {
+.blog .sidebar .search-form form input[type="text"] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
@@ -2434,7 +2437,7 @@ section {
   padding: 0;
 }
 
-.blog .sidebar .categories ul li+li {
+.blog .sidebar .categories ul li + li {
   padding-top: 10px;
 }
 
@@ -2453,7 +2456,7 @@ section {
   font-size: 14px;
 }
 
-.blog .sidebar .recent-posts .post-item+.post-item {
+.blog .sidebar .recent-posts .post-item + .post-item {
   margin-top: 15px;
 }
 
@@ -2553,13 +2556,13 @@ section {
   border: 1px solid #e1ecff;
 }
 
-.footer .footer-newsletter form input[type=email] {
+.footer .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 8px;
   width: calc(100% - 140px);
 }
 
-.footer .footer-newsletter form input[type=submit] {
+.footer .footer-newsletter form input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
@@ -2575,7 +2578,7 @@ section {
   border-radius: 4px;
 }
 
-.footer .footer-newsletter form input[type=submit]:hover {
+.footer .footer-newsletter form input[type="submit"]:hover {
   background: #5969f3;
 }
 
