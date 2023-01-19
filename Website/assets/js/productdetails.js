@@ -73,7 +73,7 @@ async function generateTshirtMockup(imageUrl) {
   // backup:
   // https://hook.eu1.make.com/pyjymqcjum4haeuj4l0g8u3762aw2j4o
 
-  await fetch("https://hook.eu1.make.com/fj7wuptvvhfh4rrdydr4h0i5vgatq43a", {
+  await fetch("https://hook.eu1.make.com/pyjymqcjum4haeuj4l0g8u3762aw2j4o", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
